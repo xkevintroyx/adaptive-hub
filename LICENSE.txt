@@ -1,0 +1,5 @@
+All rights reserved.
+
+This project is proprietary. No part of this codebase may be copied, modified, distributed, or used without explicit written permission from the owner.
+
+Unauthorized use is strictly prohibited.
