@@ -24,10 +24,10 @@ init_db()
 def send_email(to_email, subject, body):
     msg = MIMEText(body)
     msg["Subject"] = subject
-    msg["From"] = "you@yourdomain.com"
+    msg["From"] = "noreply@officina.com"
     msg["To"] = to_email
     s = smtplib.SMTP("localhost", 25)  # assumes Postfix running locally
-    s.sendmail("you@yourdomain.com", [to_email], msg.as_string())
+    s.sendmail("noreply@officina.com", [to_email], msg.as_string())
     s.quit()
 
 @app.route("/signup", methods=["POST"])
