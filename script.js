@@ -3,43 +3,48 @@ function showTab(tabId) {
   document.getElementById(tabId).style.display = 'block';
 }
 
-// Keywords (static list for now)
-const keywords = ["modular SaaS","adaptive funnels","boho florals","retro Americana","color therapy"];
-const keywordList = document.getElementById("keywordList");
-keywords.forEach(k => {
-  const li = document.createElement("li");
-  li.innerText = k;
-  keywordList.appendChild(li);
-});
+// Synesthesia Mapper
+function submitSynesthesia() {
+  const word = document.getElementById("wordInput").value;
+  const color = document.getElementById("colorInput").value;
+  const result = `You mapped "${word}" to the color ${color}.`;
+  document.getElementById("synesthesiaResult").innerText = result;
 
-// Quotes
-const quotes = [
-  "Simplicity is the ultimate sophistication.",
-  "Design is intelligence made visible.",
-  "Innovation distinguishes between a leader and a follower."
-];
-document.getElementById("quoteText").innerText = quotes[Math.floor(Math.random() * quotes.length)];
-
-// Calculator
-function calculate() {
-  const num1 = parseFloat(document.getElementById("num1").value);
-  const num2 = parseFloat(document.getElementById("num2").value);
-  document.getElementById("result").innerText = num1 + num2;
+  logData("synesthesia", { word, color });
 }
 
-// Color Palette
-function generateColors() {
-  const colorsDiv = document.getElementById("colors");
-  colorsDiv.innerHTML = "";
-  for (let i = 0; i < 5; i++) {
-    const color = "#" + Math.floor(Math.random()*16777215).toString(16);
-    const box = document.createElement("div");
-    box.style.background = color;
-    box.style.width = "60px";
-    box.style.height = "60px";
-    box.style.display = "inline-block";
-    box.style.margin = "5px";
-    colorsDiv.appendChild(box);
-  }
+// Micro‑Prediction Market
+function submitPrediction(choice) {
+  const result = `You predicted: ${choice}`;
+  document.getElementById("predictionResult").innerText = result;
+
+  logData("prediction", { choice });
 }
-generateColors();
+
+// Curiosity Cloud
+function submitCuriosity() {
+  const curiosity = document.getElementById("curiosityInput").value;
+  const result = `You are curious about: ${curiosity}`;
+  document.getElementById("curiosityResult").innerText = result;
+
+  logData("curiosity", { curiosity });
+}
+
+// Logging function
+function logData(type, payload) {
+  const entry = {
+    type,
+    payload,
+    timestamp: new Date().toISOString()
+  };
+
+  // Save locally in browser (for demo)
+  console.log("Captured data:", entry);
+
+  // Send to your backend API (example)
+  fetch("https://your-data-collector.example.com/collect", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(entry)
+  });
+}
