@@ -1,6 +1,33 @@
-body { font-family: Arial, sans-serif; text-align: center; }
-.tabs { margin: 20px; }
-button { padding: 10px 20px; margin: 5px; cursor: pointer; }
-.tab-content { margin-top: 20px; }
-input, select { padding: 8px; margin: 5px; }
-p { margin-top: 10px; font-weight: bold; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f9f9f9;
+}
+
+h1 {
+  color: #333;
+}
+
+#tabs button {
+  margin: 5px;
+  padding: 10px;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+}
+
+#tabs button:hover {
+  background: #bbb;
+}
+
+#signupForm input, #signupForm button {
+  padding: 10px;
+  margin: 5px;
+}
+
+#adminPanel {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
