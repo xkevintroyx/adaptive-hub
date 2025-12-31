@@ -2,49 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Adaptive Hub</title>
+  <title>KT Squeeze Page</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Adaptive Hub</h1>
-  <div class="tabs">
-    <button onclick="showTab('synesthesia')">Synesthesia Mapper</button>
-    <button onclick="showTab('prediction')">Micro‑Prediction Market</button>
-    <button onclick="showTab('curiosity')">Curiosity Cloud</button>
+  <h1>Welcome to KT Offers</h1>
+  <div id="tabs">
+    <button onclick="showTab('Deals')">Deals</button>
+    <button onclick="showTab('Tips')">Tips</button>
+    <button onclick="showTab('Freebies')">Freebies</button>
   </div>
 
-  <!-- Synesthesia Mapper -->
-  <div id="synesthesia" class="tab-content">
-    <h2>Synesthesia Mapper</h2>
-    <input type="text" id="wordInput" placeholder="Enter a word or feeling">
-    <select id="colorInput">
-      <option value="red">Red</option>
-      <option value="blue">Blue</option>
-      <option value="green">Green</option>
-      <option value="yellow">Yellow</option>
-      <option value="purple">Purple</option>
-    </select>
-    <button onclick="submitSynesthesia()">Map</button>
-    <p id="synesthesiaResult"></p>
+  <div id="content">
+    <form id="signupForm">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Unlock Offer</button>
+    </form>
   </div>
 
-  <!-- Micro‑Prediction Market -->
-  <div id="prediction" class="tab-content" style="display:none;">
-    <h2>Micro‑Prediction Market</h2>
-    <p>Will it rain tomorrow?</p>
-    <button onclick="submitPrediction('yes')">Yes</button>
-    <button onclick="submitPrediction('no')">No</button>
-    <button onclick="submitPrediction('maybe')">Maybe</button>
-    <p id="predictionResult"></p>
+  <hr>
+
+  <!-- Admin Panel -->
+  <button onclick="toggleAdmin()">Admin Login</button>
+  <div id="adminPanel" style="display:none;">
+    <h2>Admin Dashboard</h2>
+    <form id="newsletterForm">
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="body" placeholder="Newsletter body" required></textarea>
+      <button type="submit">Send Newsletter</button>
+    </form>
   </div>
 
-  <!-- Curiosity Cloud -->
-  <div id="curiosity" class="tab-content" style="display:none;">
-    <h2>Curiosity Cloud</h2>
-    <input type="text" id="curiosityInput" placeholder="What are you curious about today?">
-    <button onclick="submitCuriosity()">Submit</button>
-    <p id="curiosityResult"></p>
-  </div>
+  <script src="app.js"></script>
+</body>
+</html>
 
   <script src="script.js"></script>
 </body>
