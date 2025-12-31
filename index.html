@@ -2,47 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>KT Adaptive Hub</title>
+  <title>Adaptive Hub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>KT Adaptive Hub</h1>
+  <h1>Adaptive Hub</h1>
   <div class="tabs">
-    <button onclick="showTab('keywords')">Trending Keywords</button>
-    <button onclick="showTab('quote')">Quote</button>
-    <button onclick="showTab('calc')">Calculator</button>
-    <button onclick="showTab('palette')">Color Palette</button>
-    <button onclick="showTab('store')">KT Store</button>
+    <button onclick="showTab('synesthesia')">Synesthesia Mapper</button>
+    <button onclick="showTab('prediction')">Micro‑Prediction Market</button>
+    <button onclick="showTab('curiosity')">Curiosity Cloud</button>
   </div>
 
-  <div id="keywords" class="tab-content">
-    <h2>Trending Keywords</h2>
-    <ul id="keywordList"></ul>
+  <!-- Synesthesia Mapper -->
+  <div id="synesthesia" class="tab-content">
+    <h2>Synesthesia Mapper</h2>
+    <input type="text" id="wordInput" placeholder="Enter a word or feeling">
+    <select id="colorInput">
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+      <option value="yellow">Yellow</option>
+      <option value="purple">Purple</option>
+    </select>
+    <button onclick="submitSynesthesia()">Map</button>
+    <p id="synesthesiaResult"></p>
   </div>
 
-  <div id="quote" class="tab-content" style="display:none;">
-    <h2>Quote of the Day</h2>
-    <p id="quoteText"></p>
+  <!-- Micro‑Prediction Market -->
+  <div id="prediction" class="tab-content" style="display:none;">
+    <h2>Micro‑Prediction Market</h2>
+    <p>Will it rain tomorrow?</p>
+    <button onclick="submitPrediction('yes')">Yes</button>
+    <button onclick="submitPrediction('no')">No</button>
+    <button onclick="submitPrediction('maybe')">Maybe</button>
+    <p id="predictionResult"></p>
   </div>
 
-  <div id="calc" class="tab-content" style="display:none;">
-    <h2>Quick Calculator</h2>
-    <input type="number" id="num1"> +
-    <input type="number" id="num2">
-    <button onclick="calculate()">=</button>
-    <p id="result"></p>
-  </div>
-
-  <div id="palette" class="tab-content" style="display:none;">
-    <h2>Color Palette Generator</h2>
-    <div id="colors"></div>
-    <button onclick="generateColors()">New Palette</button>
-  </div>
-
-  <div id="store" class="tab-content" style="display:none;">
-    <h2>KT Products</h2>
-    <p>Explore KT apparel, mugs, and tote bags.</p>
-    <a href="YOUR_KT_STORE_URL" target="_blank">Visit Store</a>
+  <!-- Curiosity Cloud -->
+  <div id="curiosity" class="tab-content" style="display:none;">
+    <h2>Curiosity Cloud</h2>
+    <input type="text" id="curiosityInput" placeholder="What are you curious about today?">
+    <button onclick="submitCuriosity()">Submit</button>
+    <p id="curiosityResult"></p>
   </div>
 
   <script src="script.js"></script>
